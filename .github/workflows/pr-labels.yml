@@ -1,18 +1,15 @@
-name: Add Labels
-
+name: "Pull Request Labeler"
 on:
-  pull_request:
-    types: 
-      - opened
+- pull_request
 
 jobs:
-  add_labels:
+  community-pr:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # TODO: commit hash 
-      - uses: actions-ecosystem/action-add-labels@bd52874380e3909a1ac983768df6976535ece7f8 # v1.1.0
-        # if: github.event.repository.fork == 'false' # Testing purposes only because I can't fork my own repo
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          labels: |
-            community-pr
+    - uses: actions/labeler@v4
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: ".github/community-pr-labeler.yml"
