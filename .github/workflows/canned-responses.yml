@@ -1,0 +1,23 @@
+name: Canned responses
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  close-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - if: github.event.label.name == 'feature-request'
+        name: Feature request
+        uses: peter-evans/close-issue@6b9ae90f02cf2148a36e31c2bb80166031f14ada
+        with:
+          comment: |
+            This is a feature request and will be closed.
+      - if: github.event.label.name == 'customer-support'
+        name: Customer Support request
+        uses: peter-evans/close-issue@6b9ae90f02cf2148a36e31c2bb80166031f14ada
+        with:
+          comment: |
+            Please contact our Customer Success team. This issue will be closed.
