@@ -11,13 +11,13 @@ jobs:
     steps:
       - if: github.event.label.name == 'feature-request'
         name: Feature request
-        uses: peter-evans/close-issue@6b9ae90f02cf2148a36e31c2bb80166031f14ada
+        uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
         with:
           comment: |
             This is a feature request and will be closed.
       - if: github.event.label.name == 'customer-support'
         name: Customer Support request
-        uses: peter-evans/close-issue@6b9ae90f02cf2148a36e31c2bb80166031f14ada
+        uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
         with:
           comment: |
             Please contact our Customer Success team. This issue will be closed.

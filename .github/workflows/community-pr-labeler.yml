@@ -1,2 +1,3 @@
+# Apply the community-pr label to any changes. This depends on using a conditional step in the Action
 community-pr:
   - '*'

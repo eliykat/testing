@@ -11,8 +11,8 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - if: ${{ !github.event.pull_request.head.repo.fork }}
-      uses: actions/labeler@v4
+    - if: ${{ !github.event.pull_request.head.repo.fork }}  # remove ! for production
+      uses: actions/labeler@9fd24f1f9d6ceb64ba34d181b329ee72f99978a0  # v4.0.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: ".github/workflows/community-pr-labeler.yml"
