@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # TODO: commit hash 
       - uses: actions-ecosystem/action-add-labels@bd52874380e3909a1ac983768df6976535ece7f8 # v1.1.0
-        if: github.event.repository.fork == 'true'
+        if: github.event.repository.fork == 'false' # Testing purposes only because I can't fork my own repo
         with:
           labels: |
             community-pr
