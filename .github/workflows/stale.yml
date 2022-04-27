@@ -1,0 +1,19 @@
+name: 'Close stale issues and PRs'
+on:
+  workflow_dispatch:
+  # schedule:   # run once a day at 6.23am (a random time to avoid peak loads)
+  #   - cron: '23 6 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@57708ae6dd2006b5642c4e1e88bac7efb3d9382e
+        with:
+          stale-issue-message: 'Message to comment on stale issues.'
+          stale-pr-message: 'Message to comment on stale PRs.'
+          stale-issue-label: 'needs-info'
+          stale-pr-label: 'changes-requested'
+          days-before-stale: -1   # Do not apply the stale labels automatically, this is a manual process
+          days-before-close: 1   # Close if no updates within this time
+
