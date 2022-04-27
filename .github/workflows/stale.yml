@@ -1,8 +1,8 @@
 name: 'Close stale issues and PRs'
 on:
   workflow_dispatch:
-  # schedule:   # run once a day at 6.23am (a random time to avoid peak loads)
-  #   - cron: '23 6 * * *'
+  schedule:   # run once a day at 11.23am (arbitrary but should avoid peak loads on the hour)
+    - cron: '23 11 * * *'
 
 jobs:
   stale:
