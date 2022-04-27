@@ -5,13 +5,14 @@ on:
       - opened
 
 jobs:
+  # Applies the community-pr label to any PRs from a forked repo
   community-pr:
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - if: ${{ !github.event.pull_request.head.repo.fork }}  # remove ! for production
+    - if: ${{ !github.event.pull_request.head.repo.fork }}  # remove ! for production, only there for testing b/c I can't fork my own repo
       uses: actions/labeler@9fd24f1f9d6ceb64ba34d181b329ee72f99978a0  # v4.0.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
