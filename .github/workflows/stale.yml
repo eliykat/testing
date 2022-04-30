@@ -10,10 +10,10 @@ jobs:
     steps:
       - uses: actions/stale@3cc123766321e9f15a6676375c154ccffb12a358  # v5.0.0
         with:
-          stale-issue-message: 'Message to comment on stale issues.'
-          stale-pr-message: 'Message to comment on stale PRs.'
           stale-issue-label: 'needs-info'
           stale-pr-label: 'changes-requested'
           days-before-stale: -1   # Do not apply the stale labels automatically, this is a manual process
           days-before-close: 1   # Close if no updates within this time
+          close-issue-message: 'Message to comment on closed issues.'
+          close-pr-message: 'Message to comment on closed PRs.'
 
