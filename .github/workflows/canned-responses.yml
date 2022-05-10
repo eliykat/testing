@@ -13,8 +13,16 @@ jobs:
         name: Feature request
         uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
         with:
-          comment: |
-            This is a feature request and will be closed.
+          comment: We use GitHub issues as a place to track bugs and other development related issues. \
+            The [Bitwarden Community Forums](https://community.bitwarden.com/) has a \
+            [Feature Requests](https://community.bitwarden.com/c/feature-requests) section for submitting, voting for, \
+            and discussing requests like this one.
+
+            Please [sign up on our forums](https://community.bitwarden.com/signup) and search to see if this request \
+            already exists. If so, you can vote for it and contribute to any discussions about it. \
+            If not, you can re-create the request there so that it can be properly tracked.
+
+            This issue will now be closed. Thanks!
       - if: github.event.label.name == 'customer-support'
         name: Customer Support request
         uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
