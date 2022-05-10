@@ -13,9 +13,9 @@ jobs:
         name: Feature request
         uses: peter-evans/close-issue@849549ba7c3a595a064c4b2c56f206ee78f93515  # v2.0.0
         with:
-          comment: We use GitHub issues as a place to track bugs and other development related issues. \
-            The [Bitwarden Community Forums](https://community.bitwarden.com/) has a \
-            [Feature Requests](https://community.bitwarden.com/c/feature-requests) section for submitting, voting for, \
+          comment: We use GitHub issues as a place to track bugs and other development related issues. \n
+            The [Bitwarden Community Forums](https://community.bitwarden.com/) has a \n\n
+            [Feature Requests](https://community.bitwarden.com/c/feature-requests) section for submitting, voting for, <br>
             and discussing requests like this one.
 
             Please [sign up on our forums](https://community.bitwarden.com/signup) and search to see if this request \
